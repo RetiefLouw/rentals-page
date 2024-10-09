@@ -83,46 +83,54 @@ const GoogleSheetData = () => {
 
       {/*price sliders for max and min price plus buttons to beds and baths filter*/}
       <div className="filter">
-        <label style={{ fontWeight: "bold" }}>Min Price:</label>
-        <input
-          type="number"
-          min="0"
-          max="1000000"
-          step="1000"
-          value={minPrice}
-          onChange={handlePriceChange(setMinPrice)}
-          className="filter-button"
-        />
-        <label style={{ fontWeight: "bold" }}>Max Price:</label>
-        <input
-          type="number"
-          min="0"
-          max="1000000"
-          step="1000"
-          value={maxPrice}
-          onChange={handlePriceChange(setMaxPrice)}
-          className="filter-button"
-        />
-        <label style={{ fontWeight: "bold" }}>Bedrooms:</label>
-        <input
-          type="number"
-          min="1"
-          max="10"
-          value={bedrooms}
-          onChange={handlePriceChange(setBedrooms)}
-          className="filter-button"
-        />
-        <label style={{ fontWeight: "bold" }}>Bathrooms:</label>
-        <input
-          type="number"
-          min="1"
-          max="10"
-          value={bathrooms}
-          onChange={handlePriceChange(setBathrooms)}
-          className="filter-button"
-        />
+        <div className="filter-item">
+          <label style={{ fontWeight: "bold" }}>Min Price:</label>
+          <input
+            type="number"
+            min="0"
+            max="1000000"
+            step="1000"
+            value={minPrice}
+            onChange={handlePriceChange(setMinPrice)}
+            className="filter-button"
+          />
+        </div>
+        <div className="filter-item">
+          <label style={{ fontWeight: "bold" }}>Max Price:</label>
+          <input
+            type="number"
+            min="0"
+            max="1000000"
+            step="1000"
+            value={maxPrice}
+            onChange={handlePriceChange(setMaxPrice)}
+            className="filter-button"
+          />
+        </div>
+        <div className="filter-item">
+          <label style={{ fontWeight: "bold" }}>Bedrooms:</label>
+          <input
+            type="number"
+            min="1"
+            max="10"
+            value={bedrooms}
+            onChange={handlePriceChange(setBedrooms)}
+            className="filter-button"
+          />
+        </div>
+        <div className="filter-item">
+          <label style={{ fontWeight: "bold" }}>Bathrooms:</label>
+          <input
+            type="number"
+            min="1"
+            max="10"
+            value={bathrooms}
+            onChange={handlePriceChange(setBathrooms)}
+            className="filter-button"
+          />
+        </div>
       </div>
-
+      
       <div className="card-container">
         {filteredRows.map((row, index) => {
           const imageUrl = row[1];

@@ -201,6 +201,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* App.css */
 .filter {
   display: flex;
   gap: 18px;
@@ -210,12 +211,10 @@
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-
-  @media (max-width: 1200px) {
-    gap: 16px;
-  }
+  flex-direction: row; /* Default to row for larger screens */
 
   @media (max-width: 768px) {
+    flex-direction: column; /* Change to column for smaller screens */
     gap: 14px;
   }
 
@@ -224,11 +223,21 @@
   }
 }
 
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adjust the gap between label and input as needed */
+  
+  @media (max-width: 480px) {
+    padding-left: 20px;
+  }
+}
+
 .filter-button {
   padding: 8px 16px;
-  width: 75px;
-  border-radius: 10px;
-  border: 1px solid #555;
-  outline: none;
+  width: 75px; /* Adjust the width as needed */
+  border-radius: 10px; /* Higher value makes the button rounder */
+  border: 1px solid #555; /* Dark gray border to match the search bar */
+  outline: none; /* Remove default outline on focus */
   text-align: left;
 }
